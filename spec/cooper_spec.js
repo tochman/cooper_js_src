@@ -20,7 +20,7 @@ describe("Person", function() {
   describe("Calculate results", function() {
     beforeEach(function() {
       spyOn(person, 'getCooperResultsForMales').and.callThrough();
-      person.assessCooper(2400);
+      person.assessCooper(2101);
     });
 
     it("should return a message", function() {
@@ -87,12 +87,12 @@ describe("Person", function() {
         expect(person.cooperMessage).toBe('Average');
       })
 
-      it('2400 m should equal "Above average"', function(){
-        person.assessCooper(2400);
+      it('2399 m should equal "Above average"', function(){
+        person.assessCooper(2399);
         expect(person.cooperMessage).toBe('Above average');
       })
 
-      it('2401 m should equal "Excellent"', function(){
+      it('2400 m should equal "Excellent"', function(){
         person.assessCooper(2401);
         expect(person.cooperMessage).toBe('Excellent');
       })
@@ -162,7 +162,7 @@ describe("Person", function() {
         expect(person.cooperMessage).toBe('Above average');
       })
 
-      it('2401 m should equal "Excellent"', function(){
+      it('2201 m should equal "Excellent"', function(){
         person.assessCooper(2201);
         expect(person.cooperMessage).toBe('Excellent');
       })
