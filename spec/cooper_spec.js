@@ -98,6 +98,76 @@ describe("Person", function() {
       })
 
     });
+
+    describe('Female, 21', function() {
+      beforeEach(function() {
+        person = new Person({
+          gender: 'Female',
+          age: 21
+        });
+      });
+
+      it('1290 m should equal "Poor"', function(){
+        person.assessCooper(1499);
+        expect(person.cooperMessage).toBe('Poor');
+      })
+
+      it('1599 m should equal "Below average"', function(){
+        person.assessCooper(1501);
+        expect(person.cooperMessage).toBe('Below average');
+      })
+
+      it('1999 m should equal "Average"', function(){
+        person.assessCooper(1801);
+        expect(person.cooperMessage).toBe('Average');
+      })
+
+      it('2400 m should equal "Above average"', function(){
+        person.assessCooper(2201);
+        expect(person.cooperMessage).toBe('Above average');
+      })
+
+      it('2401 m should equal "Excellent"', function(){
+        person.assessCooper(2701);
+        expect(person.cooperMessage).toBe('Excellent');
+      })
+
+    });
+
+    describe('Female, 51', function() {
+      beforeEach(function() {
+        person = new Person({
+          gender: 'Female',
+          age: 51
+        });
+      });
+
+      it('1290 m should equal "Poor"', function(){
+        person.assessCooper(1099);
+        expect(person.cooperMessage).toBe('Poor');
+      })
+
+      it('1599 m should equal "Below average"', function(){
+        person.assessCooper(1101);
+        expect(person.cooperMessage).toBe('Below average');
+      })
+
+      it('1999 m should equal "Average"', function(){
+        person.assessCooper(1401);
+        expect(person.cooperMessage).toBe('Average');
+      })
+
+      it('2400 m should equal "Above average"', function(){
+        person.assessCooper(2199);
+        expect(person.cooperMessage).toBe('Above average');
+      })
+
+      it('2401 m should equal "Excellent"', function(){
+        person.assessCooper(2201);
+        expect(person.cooperMessage).toBe('Excellent');
+      })
+
+    });
   });
 
 });
