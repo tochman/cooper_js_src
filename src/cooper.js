@@ -132,7 +132,7 @@ Person.prototype.getCooperResultsForMales = function(distance) {
   }
 }
 
-Person.prototype.getCooperResultsForFeales = function(distance) {
+Person.prototype.getCooperResultsForFemales = function(distance) {
   var age = this.age;
   switch (true) {
     case (age.between(13,14)):
